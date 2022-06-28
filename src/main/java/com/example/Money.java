@@ -1,9 +1,20 @@
 package com.example;
 
+import javax.swing.plaf.basic.BasicSplitPaneUI;
 import java.rmi.server.RMIClassLoader;
 
-public class Money {
+public abstract class Money {
     protected int amount;
+
+    public abstract Money times(int multiplier);
+
+    public static Money dollar(int amount){
+        return new Dollar(amount);
+    }
+
+    public static Money franc(int amount){
+        return new Franc(amount);
+    }
 
     public boolean equals(Object object){
         Money money = (Money) object;
