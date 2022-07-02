@@ -43,11 +43,12 @@ public class Money implements Expresssion {
                 '}';
     }
 
+    @Override
     public Expresssion times(int multiplier){
         return new Money(amount * multiplier, this.currency);
     }
 
-    public Expresssion plus(Expresssion added){
-        return new Sum(this, added);
+    public Expresssion plus(Expresssion addend){
+        return new Sum(this, addend);
     }
 }

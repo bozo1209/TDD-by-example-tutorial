@@ -16,7 +16,12 @@ public class Sum implements Expresssion {
     }
 
     @Override
-    public Expresssion plus(Expresssion added) {
-        return null;
+    public Expresssion plus(Expresssion addend) {
+        return new Sum(this, addmend);
+    }
+
+    @Override
+    public Expresssion times(int multiplier) {
+        return new Sum(augmend.times(multiplier), addmend.times(multiplier));
     }
 }
